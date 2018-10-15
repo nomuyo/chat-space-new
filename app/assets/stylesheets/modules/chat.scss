@@ -1,0 +1,117 @@
+.chat{
+  width: calc(100vw - 300px);
+  float: left;
+
+  .header{
+    border-bottom: 1px solid $border;
+    height: 100px;
+    padding: 0 40px;
+  }
+
+  .left-header{
+    float: left;
+    &__title{
+      font-size: 20px;
+      color: $header_title;
+      margin-top: 35px;
+    }
+    &__members{
+      font-size: 12px;
+      color: $gray;
+      margin-top: 15px;
+      .member{
+        display: inline-block;
+        padding-right: 5px;
+      }
+    }
+  }
+
+  .right-header{
+    float: right;
+    margin-top: 28px;
+    padding: 0 20px;
+    border: solid 1px $button;
+    line-height: 40px;
+    height: 40px;
+    &__button{
+      color: $button;
+      text-decoration: none;
+    }
+  }
+
+  .messages.js-messages{
+    padding: 46px 40px 0;
+    height: calc(100vh - 237px);
+  }
+
+  .message{
+    margin-bottom: 40px;
+  }
+
+  .upper-message{
+    &__user-name{
+      font-size: 16px;
+      font-weight: bold;
+      color: $navy;
+      padding-right: 10px;
+      display:inline-block;
+    }
+    &__date{
+      font-size: 12px;
+      color: $gray;
+      display:inline-block;
+    }
+  }
+
+  .lower-message{
+    &__content{
+      font-size: 14px;
+      color: $navy;
+      margin-top: 10px;
+    }
+  }
+
+  .form {
+    background-color: $form;
+    height: 50px;
+    padding: 20px 40px;
+    .js-form {
+      width: calc(100vw - 300px - 180px);
+    }
+
+    &__message {
+      height: 50px;
+      width: calc(100vw - 300px - 228px);
+      padding: 0 10px;
+      float: left;
+      border: none;
+      font-size: 16px;
+      color: $navy;
+    }
+
+    &__mask {
+      height: 50px;
+      float: left;
+      display: inline-block;
+      background-color: $white;
+      padding-right: 10px;
+      line-height: 50px;
+      &__image {
+        .icon {
+        }
+        .js-file {
+          display: none;
+        }
+      }
+    }
+
+    &__submit {
+      background-color: $button;
+      height: 50px;
+      color: $white;
+      padding: 0 20px;
+      margin-left: 15px;
+      float: left;
+    }
+  }
+}

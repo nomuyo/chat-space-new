@@ -1,18 +1,5 @@
 .wrapper
-  .side-bar
-    .header
-      .header__name
-        = current_user.name
-      %ul.header__lists
-        %li.list
-          %a{:href => "/groups/new"}
-            = fa_icon 'pencil-square-o', class: 'icon'
-        %li.list
-          = link_to edit_user_path(current_user) do
-            = fa_icon 'cog', class: 'icon'
-    .groups
-      = render partial: 'group'
-
+  = render partial: 'shared/side_bar'
   .chat
     .header
       .left-header
@@ -23,11 +10,10 @@
           %li.member
             Nomura Masayo
       .right-header
-        %a.right-header__button{:href => "/groups/?/edit"}
-          Edit
+        .right-header__button
+          = link_to 'Edit', edit_group_path(@group.id)
     .messages.js-messages
-      .message
-        = render partial: 'message'
+      = render partial: 'message'
     .form
       .js-form{"id" => "new_message", "enctype" => "multipart/form-data", "accept-charset" => "UTF-8", "method" => "post"}
         %input.form__message.js-content{"placeholder" => "type a message", "name" => "message[content]", "id" => "message_content" }
