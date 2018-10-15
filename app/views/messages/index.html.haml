@@ -10,8 +10,8 @@
           %li.member
             Nomura Masayo
       .right-header
-        %a.right-header__button{:href => "/groups/?/edit"}
-          Edit
+        .right-header__button
+          = link_to 'Edit', edit_group_path(@group.id)
     .messages.js-messages
       = render partial: 'message'
     .form
