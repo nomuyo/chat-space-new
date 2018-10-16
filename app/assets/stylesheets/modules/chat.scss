@@ -71,6 +71,11 @@
       color: $navy;
       margin-top: 10px;
     }
+    &__image {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+    }
   }
 
   .form {
