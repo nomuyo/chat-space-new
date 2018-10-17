@@ -1,73 +1,80 @@
-.chat{
+.chat {
   width: calc(100vw - 300px);
   float: left;
 
-  .header{
+  .header {
     border-bottom: 1px solid $border;
     height: 100px;
     padding: 0 40px;
   }
 
-  .left-header{
+  .left-header {
     float: left;
-    &__title{
+    &__title {
       font-size: 20px;
       color: $header_title;
       margin-top: 35px;
     }
-    &__members{
+    &__members {
       font-size: 12px;
       color: $gray;
       margin-top: 15px;
-      .member{
+      .member {
         display: inline-block;
         padding-right: 5px;
       }
     }
   }
 
-  .right-header{
+  .right-header {
     float: right;
     margin-top: 28px;
     padding: 0 20px;
     border: solid 1px $button;
     line-height: 40px;
     height: 40px;
-    &__button{
-      color: $button;
-      text-decoration: none;
+    &__button {
+      .edit {
+        color: $button;
+        text-decoration: none;
+      }
     }
   }
 
-  .messages.js-messages{
+  .messages.js-messages {
     padding: 46px 40px 0;
     height: calc(100vh - 237px);
+    overflow: auto;
   }
 
-  .message{
+  .message {
     margin-bottom: 40px;
   }
 
-  .upper-message{
-    &__user-name{
+  .upper-message {
+    &__user-name {
       font-size: 16px;
       font-weight: bold;
       color: $navy;
       padding-right: 10px;
       display:inline-block;
     }
-    &__date{
+    &__date {
       font-size: 12px;
       color: $gray;
       display:inline-block;
     }
   }
 
-  .lower-message{
-    &__content{
+  .lower-message {
+    &__content {
       font-size: 14px;
       color: $navy;
       margin-top: 10px;
+    }
+    &__image {
+      width: 200px;
+      object-fit: cover;
     }
   }
 
@@ -97,9 +104,7 @@
       padding-right: 10px;
       line-height: 50px;
       &__image {
-        .icon {
-        }
-        .js-file {
+        .hidden {
           display: none;
         }
       }

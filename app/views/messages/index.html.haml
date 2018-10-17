@@ -4,21 +4,22 @@
     .header
       .left-header
         .left-header__title
-          タイトル
+          = @group.name
         %ul.left-header__members
           Member :
           %li.member
-            Nomura Masayo
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
       .right-header
         .right-header__button
-          = link_to 'Edit', edit_group_path(@group.id)
+          = link_to 'Edit', edit_group_path(@group.id), class: 'edit'
     .messages.js-messages
-      = render partial: 'message'
+      = render @messages
     .form
-      .js-form{"id" => "new_message", "enctype" => "multipart/form-data", "accept-charset" => "UTF-8", "method" => "post"}
-        %input.form__message.js-content{"placeholder" => "type a message", "name" => "message[content]", "id" => "message_content" }
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
-          %label.form__mask__image
+          = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
-            %input.hidden.js-file{:type => "file"}
-      %input.form__submit{:type => "submit", :name => "comit", :value => "Send", "data-disable-with" => "Send"}
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
