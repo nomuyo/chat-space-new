@@ -1,5 +1,9 @@
 $(function(){
   function buildHTML(message){
+    var image = '';
+    if (message.image) {
+      image = `<img class="lower-message__image" src="${message.image}">`
+    }
     var html = `<div class="message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -12,7 +16,7 @@ $(function(){
                   <div class="lower-message">
                     <p class="lower-message__content">
                       ${message.content}
-
+                      ${image}
                     </p>
                   </div>
                 </div>`
@@ -38,7 +42,7 @@ $(function(){
       $('.form__submit').attr('disabled', false);
       // formのreset
       document.getElementById("new_message").reset();
-      $(".messages").animate({scrollTop:9999}, 500, 'swing');
+      $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 500, 'swing');
     })
     .fail(function() {
      alert('メッセージの送信に失敗しました！');
