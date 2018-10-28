@@ -41,7 +41,7 @@ $(function(){
       $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 500, 'swing');
     })
     .fail(function() {
-     alert('メッセージの送信に失敗しました！');
+      alert('メッセージの送信に失敗しました！');
     });
-  })
-})
+  });
+});
